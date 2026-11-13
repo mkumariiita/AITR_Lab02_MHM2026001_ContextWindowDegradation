@@ -1,0 +1,17 @@
+{
+  "item_id": "item_10",
+  "question": "What is said about citation presence versus citation support in long-context answers?",
+  "required_claim": "A citation marker can appear without truly supporting the claim; support must be checked.",
+  "gold_answer_key": "without truly supporting",
+  "gold_evidence_ids": ["P3", "P7"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "The greenhouse temperature alarm was tested on Monday morning."},
+    {"id": "P2", "role": "distractor", "text": "A soft-skill workshop flyer was posted near Elevator 3."},
+    {"id": "P3", "role": "gold_support", "text": "Cite note P: Models sometimes emit a passage id next to a claim even when that passage does not contain the supporting fact."},
+    {"id": "P4", "role": "distractor", "text": "The chemistry stockroom required goggles for all visitors."},
+    {"id": "P5", "role": "distractor", "text": "A lost ID card was turned in at the security desk."},
+    {"id": "P6", "role": "distractor", "text": "The debate club ordered extra timers for the weekend tournament."},
+    {"id": "P7", "role": "gold_support", "text": "Cite note Q: Evaluation should distinguish citation presence from citation support—whether the cited span actually justifies the generated claim."}
+  ]
+}

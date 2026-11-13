@@ -1,0 +1,17 @@
+{
+  "item_id": "item_07",
+  "question": "According to the notes, how should evidence coverage be treated relative to answer fluency in research synthesis evaluation?",
+  "required_claim": "Fluent answers can still omit required evidence; coverage must be scored separately.",
+  "gold_answer_key": "scored separately",
+  "gold_evidence_ids": ["P3", "P5"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A photography club posted an exhibition in the student center hallway."},
+    {"id": "P2", "role": "distractor", "text": "The HVAC filter replacement schedule was updated for March."},
+    {"id": "P3", "role": "gold_support", "text": "Eval note L: A synthesis can read fluently and still miss several required findings, so answer correctness alone is an incomplete metric."},
+    {"id": "P4", "role": "distractor", "text": "A chess tournament bracket was printed on the dorm notice board."},
+    {"id": "P5", "role": "gold_support", "text": "Eval note M: Evidence coverage should be measured as the fraction of gold evidence items actually used or correctly cited, separately from fluency."},
+    {"id": "P6", "role": "distractor", "text": "The music practice rooms introduced online booking slots."},
+    {"id": "P7", "role": "distractor", "text": "A campus map kiosk was moved closer to the main gate."}
+  ]
+}

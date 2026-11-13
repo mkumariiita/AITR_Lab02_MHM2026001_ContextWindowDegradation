@@ -1,0 +1,20 @@
+{
+  "item_id": "item_10",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] The greenhouse temperature alarm was tested on Monday morning.\n\n[P2] A soft-skill workshop flyer was posted near Elevator 3.\n\n[P3] Cite note P: Models sometimes emit a passage id next to a claim even when that passage does not contain the supporting fact.\n\n[P7] Cite note Q: Evaluation should distinguish citation presence from citation support\u2014whether the cited span actually justifies the generated claim.\n\n[P4] The chemistry stockroom required goggles for all visitors.\n\n[P5] A lost ID card was turned in at the security desk.\n\n[P6] The debate club ordered extra timers for the weekend tournament.\n\nQuestion: What is said about citation presence versus citation support in long-context answers?\n\nAnswer:",
+  "response": "The passages note that a model can attach a citation ID to a claim even when the cited passage does not actually contain the evidence for that claim, and that evaluation should therefore distinguish between mere citation **presence** and true citation **support**\u2014i.e., whether the cited span actually justifies the generated claim. [P3][P7]",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P3",
+      "P7"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

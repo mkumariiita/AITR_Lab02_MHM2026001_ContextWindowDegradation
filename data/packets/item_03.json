@@ -1,0 +1,17 @@
+{
+  "item_id": "item_03",
+  "question": "According to the passages, does spaced practice improve long-term retention compared with massed practice, and what caveat is reported?",
+  "required_claim": "Spaced practice helps retention on average; one study finds the benefit shrinks for very short retention intervals.",
+  "gold_answer_key": "spaced practice",
+  "gold_evidence_ids": ["P2", "P6"],
+  "contradict_ids": ["P6"],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A campus bookstore reported higher sales of notebooks during midterms than during reading week."},
+    {"id": "P2", "role": "gold_support", "text": "Study R (experiment, n=200) found that spaced practice produced higher long-term retention scores than massed practice after a one-week delay."},
+    {"id": "P3", "role": "distractor", "text": "Lecture capture downloads peaked on Sunday evenings in the engineering faculty."},
+    {"id": "P4", "role": "distractor", "text": "An IT ticket log showed printer outages clustered around assignment deadlines."},
+    {"id": "P5", "role": "distractor", "text": "Student union surveys listed cafeteria wait times as a top complaint."},
+    {"id": "P6", "role": "gold_contradict", "text": "Study S reported that the spaced-practice advantage was small or absent when the retention test occurred only 20 minutes after study."},
+    {"id": "P7", "role": "distractor", "text": "A facilities report noted that classroom projectors were replaced in Building C."}
+  ]
+}

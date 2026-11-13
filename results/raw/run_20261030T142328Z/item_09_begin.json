@@ -1,0 +1,20 @@
+{
+  "item_id": "item_09",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P4] Pipeline note N: When each paper is compressed into a short summary first, methodological limitations are frequently dropped because they are not treated as central claims.\n\n[P6] Pipeline note O: If a limitation is missing from stage-1 summaries, later synthesis stages cannot recover it unless the system re-reads the source or keeps an explicit evidence table.\n\n[P1] A vending machine on Floor 2 was restocked with water bottles.\n\n[P2] The language lab headphones were sanitized between classes.\n\n[P3] An intramural soccer match was rescheduled after rain.\n\n[P5] The post office window shortened lunch-hour service.\n\n[P7] A visitor parking voucher printer was installed at Gate B.\n\nQuestion: Do hierarchical summarize-then-synthesize pipelines risk dropping methodological limitations early, according to the notes?\n\nAnswer:",
+  "response": "Yes. According to the pipeline notes, hierarchical \u201csummarize\u2011then\u2011synthesize\u201d approaches can drop methodological limitations early in the process.  Pipeline note\u202fN states that when each paper is compressed into a short summary first, methodological limitations are frequently omitted because they are not treated as central claims\u3010P4\u3011.  Pipeline note\u202fO adds that if a limitation is missing from the stage\u20111 summaries, later synthesis stages cannot recover it unless the system re\u2011reads the source or keeps an explicit evidence table\u3010P6\u3011.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P4",
+      "P6"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

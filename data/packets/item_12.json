@@ -1,0 +1,17 @@
+{
+  "item_id": "item_12",
+  "question": "What do the sources report about worked examples versus problem-solving practice for novices learning procedures?",
+  "required_claim": "Worked examples help novices initially; fading guidance later supports transfer.",
+  "gold_answer_key": "worked examples",
+  "gold_evidence_ids": ["P3", "P6"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "The copy center offered double-sided printing discounts on Fridays."},
+    {"id": "P2", "role": "distractor", "text": "A stray cat was reported near the engineering courtyard."},
+    {"id": "P3", "role": "gold_support", "text": "Study WE-1 found that novices learning multi-step procedures scored higher after studying worked examples than after unaided problem solving of equal time."},
+    {"id": "P4", "role": "distractor", "text": "The radio station playlist featured student submissions this week."},
+    {"id": "P5", "role": "distractor", "text": "A fire drill emptied Building A in under four minutes."},
+    {"id": "P6", "role": "gold_support", "text": "Study WE-2 reported that gradually fading worked-example guidance toward independent practice improved later transfer relative to keeping full examples throughout."},
+    {"id": "P7", "role": "distractor", "text": "The campus app pushed a notification about a water-main repair."}
+  ]
+}

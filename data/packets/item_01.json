@@ -1,0 +1,45 @@
+{
+  "item_id": "item_01",
+  "question": "Does tutoring-bot feedback improve short-term quiz scores in the summarized studies, and for whom?",
+  "required_claim": "Improvement is reported for low-prior-knowledge students; one study finds no average effect.",
+  "gold_answer_key": "low-prior-knowledge",
+  "gold_evidence_ids": ["P2", "P5"],
+  "contradict_ids": ["P5"],
+  "passages": [
+    {
+      "id": "P1",
+      "role": "distractor",
+      "text": "Campus Wi-Fi latency was measured across three dormitories during exam week. Median latency remained under 40 ms."
+    },
+    {
+      "id": "P2",
+      "role": "gold_support",
+      "text": "Study A (RCT, n=120) found that immediate tutoring-bot feedback raised short-term quiz scores for students with low prior knowledge (standardized effect ≈ 0.35)."
+    },
+    {
+      "id": "P3",
+      "role": "distractor",
+      "text": "Library seating capacity increased by 15% after renovation. Student satisfaction with noise levels was unchanged."
+    },
+    {
+      "id": "P4",
+      "role": "distractor",
+      "text": "A survey of teaching assistants reported higher workload when courses adopted weekly online quizzes."
+    },
+    {
+      "id": "P5",
+      "role": "gold_contradict",
+      "text": "Study B (survey, n=80) reported no significant average difference in quiz scores between tutoring-bot and static-answer conditions."
+    },
+    {
+      "id": "P6",
+      "role": "distractor",
+      "text": "The registrar noted that course withdrawal rates fell slightly after mid-semester advising emails."
+    },
+    {
+      "id": "P7",
+      "role": "distractor",
+      "text": "An HCI pilot study redesigned the bot interface icons; usability scores improved, but learning outcomes were not measured."
+    }
+  ]
+}

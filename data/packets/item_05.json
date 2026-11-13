@@ -1,0 +1,17 @@
+{
+  "item_id": "item_05",
+  "question": "Do the passages support using larger language-model context windows as a complete substitute for retrieval when synthesizing many papers?",
+  "required_claim": "Larger windows help capacity but do not replace careful retrieval; omitted retrieved evidence still breaks synthesis.",
+  "gold_answer_key": "not a complete substitute",
+  "gold_evidence_ids": ["P2", "P7"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A coffee shop near the lab introduced a student loyalty card."},
+    {"id": "P2", "role": "gold_support", "text": "Methods note J: Expanding the context window increases how much text can be pasted in, but models may still under-use middle passages when synthesizing many claims."},
+    {"id": "P3", "role": "distractor", "text": "GPU fan noise complaints were logged in the shared compute room."},
+    {"id": "P4", "role": "distractor", "text": "A packaging inventory listed spare Ethernet cables in Cabinet 4."},
+    {"id": "P5", "role": "distractor", "text": "The department newsletter announced a guest talk on robotics."},
+    {"id": "P6", "role": "distractor", "text": "Bike rack capacity near the library was expanded by twelve slots."},
+    {"id": "P7", "role": "gold_support", "text": "Methods note K: If a retriever fails to surface a required paper passage, the synthesizer cannot cite it—so retrieval quality remains a separate failure mode even with long context."}
+  ]
+}

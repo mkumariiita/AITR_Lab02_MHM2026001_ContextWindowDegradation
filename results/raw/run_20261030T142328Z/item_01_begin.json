@@ -1,0 +1,20 @@
+{
+  "item_id": "item_01",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P2] Study A (RCT, n=120) found that immediate tutoring-bot feedback raised short-term quiz scores for students with low prior knowledge (standardized effect \u2248 0.35).\n\n[P5] Study B (survey, n=80) reported no significant average difference in quiz scores between tutoring-bot and static-answer conditions.\n\n[P1] Campus Wi-Fi latency was measured across three dormitories during exam week. Median latency remained under 40 ms.\n\n[P3] Library seating capacity increased by 15% after renovation. Student satisfaction with noise levels was unchanged.\n\n[P4] A survey of teaching assistants reported higher workload when courses adopted weekly online quizzes.\n\n[P6] The registrar noted that course withdrawal rates fell slightly after mid-semester advising emails.\n\n[P7] An HCI pilot study redesigned the bot interface icons; usability scores improved, but learning outcomes were not measured.\n\nQuestion: Does tutoring-bot feedback improve short-term quiz scores in the summarized studies, and for whom?\n\nAnswer:",
+  "response": "**Short\u2011term quiz scores**\n\n- **Study\u202fA (RCT, n\u202f=\u202f120)** found that immediate tutoring\u2011bot feedback produced a modest improvement in short\u2011term quiz scores, but only for students who entered the study with **low prior knowledge** (standardized effect \u2248\u202f0.35)\u3010P2\u3011.  \n- **Study\u202fB (survey, n\u202f=\u202f80)** reported **no significant average difference** in quiz scores between the tutoring\u2011bot and static\u2011answer conditions across the whole sample\u3010P5\u3011.\n\n**Conclusion**\n\nThe evidence suggests that tutoring\u2011bot feedback can boost short\u2011term quiz performance, but the effect appears limited to students with low prior knowledge (as shown in Study\u202fA). Study\u202fB does not support a general improvement across all students. Further research is needed to confirm whether the benefit extends to other student groups.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

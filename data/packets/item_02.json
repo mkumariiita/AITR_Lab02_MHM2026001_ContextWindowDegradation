@@ -1,0 +1,45 @@
+{
+  "item_id": "item_02",
+  "question": "What do the sources say about whether longer context windows alone guarantee better multi-document answer completeness?",
+  "required_claim": "Longer windows do not guarantee complete evidence use; middle evidence can be missed.",
+  "gold_answer_key": "does not guarantee",
+  "gold_evidence_ids": ["P3", "P6"],
+  "contradict_ids": [],
+  "passages": [
+    {
+      "id": "P1",
+      "role": "distractor",
+      "text": "Tokenizers split text into subword units. Byte-pair encoding is common in modern LLMs."
+    },
+    {
+      "id": "P2",
+      "role": "distractor",
+      "text": "GPU memory bandwidth often limits throughput before raw parameter count does."
+    },
+    {
+      "id": "P3",
+      "role": "gold_support",
+      "text": "Synthetic note C: When relevant sentences were placed in the middle of a long prompt, models more often failed to use them despite the full text fitting in the context window."
+    },
+    {
+      "id": "P4",
+      "role": "distractor",
+      "text": "Beam search and sampling are decoding strategies; temperature controls randomness."
+    },
+    {
+      "id": "P5",
+      "role": "distractor",
+      "text": "Retrieval indices can be built with dense embeddings or sparse lexical features."
+    },
+    {
+      "id": "P6",
+      "role": "gold_support",
+      "text": "Synthetic note D: Answer fluency can remain high even when only a subset of required evidence items is cited, so completeness must be scored separately from correctness."
+    },
+    {
+      "id": "P7",
+      "role": "distractor",
+      "text": "Unit tests for data loaders should check missing fields and duplicate passage ids."
+    }
+  ]
+}

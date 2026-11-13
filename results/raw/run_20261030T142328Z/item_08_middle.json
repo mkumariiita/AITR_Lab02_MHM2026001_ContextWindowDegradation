@@ -1,0 +1,20 @@
+{
+  "item_id": "item_08",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] A landscaping crew planted new shrubs outside the admin building.\n\n[P3] The career fair reserved Booth 12 for nonprofit employers.\n\n[P2] Study Sleep-A (n=150) reported that students sleeping under six hours had lower next-day attention test scores than peers sleeping seven to eight hours.\n\n[P5] Study Sleep-B found no reliable sleep\u2013attention association among students who consumed more than two caffeinated drinks before testing.\n\n[P4] A packaging label printer jammed twice during orientation week.\n\n[P6] The theater society postponed auditions by one day due to a room conflict.\n\n[P7] A recycling drive collected cardboard outside the dining hall.\n\nQuestion: What do the passages conclude about sleep duration and next-day attention test scores in the summarized student samples?\n\nAnswer:",
+  "response": "The studies give two different findings:\n\n* **Sleep\u2011A** (n\u202f=\u202f150) reported that students who slept **under six hours** had **lower next\u2011day attention test scores** than peers who slept **seven to eight hours** [P2].\n* **Sleep\u2011B** found **no reliable sleep\u2013attention association** among students who had **more than two caffeinated drinks** before testing, indicating that in that caffeinated context sleep duration did not predict attention scores [P5].",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

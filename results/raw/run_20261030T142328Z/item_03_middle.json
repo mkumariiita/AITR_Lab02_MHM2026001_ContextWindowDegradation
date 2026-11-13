@@ -1,0 +1,20 @@
+{
+  "item_id": "item_03",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] A campus bookstore reported higher sales of notebooks during midterms than during reading week.\n\n[P3] Lecture capture downloads peaked on Sunday evenings in the engineering faculty.\n\n[P2] Study R (experiment, n=200) found that spaced practice produced higher long-term retention scores than massed practice after a one-week delay.\n\n[P6] Study S reported that the spaced-practice advantage was small or absent when the retention test occurred only 20 minutes after study.\n\n[P4] An IT ticket log showed printer outages clustered around assignment deadlines.\n\n[P5] Student union surveys listed cafeteria wait times as a top complaint.\n\n[P7] A facilities report noted that classroom projectors were replaced in Building C.\n\nQuestion: According to the passages, does spaced practice improve long-term retention compared with massed practice, and what caveat is reported?\n\nAnswer:",
+  "response": "Yes.  Study\u202fR (n\u202f=\u202f200) found that spaced practice produced higher long\u2011term retention scores than massed practice after a one\u2011week delay\u202f[P2].  However, Study\u202fS reported that the spaced\u2011practice advantage was small or absent when the retention test occurred only 20\u202fminutes after study\u202f[P6].",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P6"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

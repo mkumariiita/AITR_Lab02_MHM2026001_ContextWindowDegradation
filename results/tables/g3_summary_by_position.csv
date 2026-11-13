@@ -1,0 +1,4 @@
+position,n,mean_coverage,mean_citation_support,mean_correctness
+begin,12,1.0,1.0,0.5833
+middle,12,1.0,1.0,0.5
+end,12,1.0,1.0,0.4167

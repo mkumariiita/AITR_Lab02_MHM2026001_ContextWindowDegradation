@@ -1,0 +1,17 @@
+{
+  "item_id": "item_08",
+  "question": "What do the passages conclude about sleep duration and next-day attention test scores in the summarized student samples?",
+  "required_claim": "Shorter sleep is linked to lower attention scores on average; one study finds the link depends on caffeine use.",
+  "gold_answer_key": "shorter sleep",
+  "gold_evidence_ids": ["P2", "P5"],
+  "contradict_ids": ["P5"],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A landscaping crew planted new shrubs outside the admin building."},
+    {"id": "P2", "role": "gold_support", "text": "Study Sleep-A (n=150) reported that students sleeping under six hours had lower next-day attention test scores than peers sleeping seven to eight hours."},
+    {"id": "P3", "role": "distractor", "text": "The career fair reserved Booth 12 for nonprofit employers."},
+    {"id": "P4", "role": "distractor", "text": "A packaging label printer jammed twice during orientation week."},
+    {"id": "P5", "role": "gold_contradict", "text": "Study Sleep-B found no reliable sleep–attention association among students who consumed more than two caffeinated drinks before testing."},
+    {"id": "P6", "role": "distractor", "text": "The theater society postponed auditions by one day due to a room conflict."},
+    {"id": "P7", "role": "distractor", "text": "A recycling drive collected cardboard outside the dining hall."}
+  ]
+}

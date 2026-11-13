@@ -1,0 +1,20 @@
+{
+  "item_id": "item_05",
+  "position": "end",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] A coffee shop near the lab introduced a student loyalty card.\n\n[P3] GPU fan noise complaints were logged in the shared compute room.\n\n[P4] A packaging inventory listed spare Ethernet cables in Cabinet 4.\n\n[P5] The department newsletter announced a guest talk on robotics.\n\n[P6] Bike rack capacity near the library was expanded by twelve slots.\n\n[P2] Methods note J: Expanding the context window increases how much text can be pasted in, but models may still under-use middle passages when synthesizing many claims.\n\n[P7] Methods note K: If a retriever fails to surface a required paper passage, the synthesizer cannot cite it\u2014so retrieval quality remains a separate failure mode even with long context.\n\nQuestion: Do the passages support using larger language-model context windows as a complete substitute for retrieval when synthesizing many papers?\n\nAnswer:",
+  "response": "No.  \nThe two methods notes explicitly state that a larger context window does **not** replace the need for a good retriever.  \n\n* P2 says that even with a larger context window the model may still \u201cunder\u2011use middle passages when synthesizing many claims\u201d\u3010P2\u3011.  \n* P7 adds that if a retriever fails to surface a required passage, the synthesizer cannot cite it, so \u201cretrieval quality remains a separate failure mode even with long context\u201d\u3010P7\u3011.  \n\nThus the passages do not support using larger language\u2011model context windows as a complete substitute for retrieval when synthesizing many papers.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P7"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

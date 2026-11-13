@@ -1,0 +1,20 @@
+{
+  "item_id": "item_02",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] Tokenizers split text into subword units. Byte-pair encoding is common in modern LLMs.\n\n[P2] GPU memory bandwidth often limits throughput before raw parameter count does.\n\n[P3] Synthetic note C: When relevant sentences were placed in the middle of a long prompt, models more often failed to use them despite the full text fitting in the context window.\n\n[P6] Synthetic note D: Answer fluency can remain high even when only a subset of required evidence items is cited, so completeness must be scored separately from correctness.\n\n[P4] Beam search and sampling are decoding strategies; temperature controls randomness.\n\n[P5] Retrieval indices can be built with dense embeddings or sparse lexical features.\n\n[P7] Unit tests for data loaders should check missing fields and duplicate passage ids.\n\nQuestion: What do the sources say about whether longer context windows alone guarantee better multi-document answer completeness?\n\nAnswer:",
+  "response": "The passages indicate that simply giving a model a longer context window does **not** guarantee that it will produce a more complete answer when multiple documents are involved.  In one synthetic experiment (P3) it was observed that when relevant sentences were placed in the middle of a long prompt, the model more often failed to use them even though the entire text fit within the context window.  Thus, context\u2011window size alone is insufficient for ensuring multi\u2011document answer completeness.  (The same study also notes that answer fluency can remain high even when only a subset of required evidence is cited, underscoring the need to score completeness separately from correctness.)  \n\n**Citations**: [P3], [P6]",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P3",
+      "P6"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

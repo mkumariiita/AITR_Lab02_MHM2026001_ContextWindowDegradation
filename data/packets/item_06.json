@@ -1,0 +1,17 @@
+{
+  "item_id": "item_06",
+  "question": "What is reported about peer instruction clicker questions and conceptual exam performance?",
+  "required_claim": "Peer discussion after clicker questions is linked to conceptual gains; one source notes weaker effects without trained facilitators.",
+  "gold_answer_key": "peer discussion",
+  "gold_evidence_ids": ["P4", "P6"],
+  "contradict_ids": ["P6"],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "The swimming pool closed for tile repairs over the long weekend."},
+    {"id": "P2", "role": "distractor", "text": "A lost-and-found notice listed three umbrellas and a calculator."},
+    {"id": "P3", "role": "distractor", "text": "Bus route 12 added an evening stop near the graduate housing block."},
+    {"id": "P4", "role": "gold_support", "text": "Study PI-1 found that classes using peer discussion after clicker questions showed higher conceptual exam scores than lecture-only controls."},
+    {"id": "P5", "role": "distractor", "text": "A cafeteria recipe change reduced sodium in the soup of the day."},
+    {"id": "P6", "role": "gold_contradict", "text": "Study PI-2 reported weaker or null conceptual gains when peer instruction was used without facilitator training and with poorly designed questions."},
+    {"id": "P7", "role": "distractor", "text": "The alumni office mailed reunion invitations to the class of 2014."}
+  ]
+}

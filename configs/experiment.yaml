@@ -1,0 +1,28 @@
+# Frozen settings draft — update model fields BEFORE real API runs (Prompt 07).
+experiment_id: context_window_degradation_position_cite_v0
+topic: Context-Window Degradation and Its Impact on Long-Document Research Synthesis
+seed: 42
+positions:
+  - begin
+  - middle
+  - end
+decoding:
+  temperature: 0.0
+  # gpt-oss models may use a reasoning channel first; keep headroom for visible content.
+  max_tokens: 768
+model:
+  # Secrets stay in .env only. These fields freeze the scientific record.
+  backend: openai_compat
+  name: openai/gpt-oss-20b
+  provider: groq
+  base_url: https://api.groq.com/openai/v1
+  frozen_on: "2026-10-30"
+prompt_version: cite_v1
+metrics:
+  - answer_correctness   # human/heuristic: 0/1 vs gold answer key
+  - evidence_coverage    # gold evidence ids mentioned or cited / required
+  - citation_support     # cited passage ids that actually support claims
+deep_analysis: unsupported_or_missed_citations
+notes: >
+  Primary IV = evidence position. Content of passages must stay identical
+  across begin/middle/end. Do not retune prompts after looking at test metrics.

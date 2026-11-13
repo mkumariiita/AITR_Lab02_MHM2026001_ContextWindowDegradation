@@ -1,0 +1,7 @@
+item_id,position,backend,model,answer_correctness,evidence_coverage,citation_support,citations,missed_gold,distractor_cites,response_file
+item_01,begin,openai_compat,openai/gpt-oss-20b,1,1.0,1.0,P2|P5,,,results/raw/run_20261030T142103Z/item_01_begin.json
+item_01,end,openai_compat,openai/gpt-oss-20b,1,1.0,1.0,P2|P5,,,results/raw/run_20261030T142103Z/item_01_end.json
+item_01,middle,openai_compat,openai/gpt-oss-20b,1,1.0,1.0,P2|P5,,,results/raw/run_20261030T142103Z/item_01_middle.json
+item_02,begin,openai_compat,openai/gpt-oss-20b,1,1.0,1.0,P3|P6,,,results/raw/run_20261030T142103Z/item_02_begin.json
+item_02,end,openai_compat,openai/gpt-oss-20b,0,1.0,1.0,P3|P6,,,results/raw/run_20261030T142103Z/item_02_end.json
+item_02,middle,openai_compat,openai/gpt-oss-20b,1,1.0,1.0,P3|P6,,,results/raw/run_20261030T142103Z/item_02_middle.json

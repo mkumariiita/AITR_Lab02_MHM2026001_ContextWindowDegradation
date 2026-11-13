@@ -1,0 +1,20 @@
+{
+  "item_id": "item_07",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P3] Eval note L: A synthesis can read fluently and still miss several required findings, so answer correctness alone is an incomplete metric.\n\n[P5] Eval note M: Evidence coverage should be measured as the fraction of gold evidence items actually used or correctly cited, separately from fluency.\n\n[P1] A photography club posted an exhibition in the student center hallway.\n\n[P2] The HVAC filter replacement schedule was updated for March.\n\n[P4] A chess tournament bracket was printed on the dorm notice board.\n\n[P6] The music practice rooms introduced online booking slots.\n\n[P7] A campus map kiosk was moved closer to the main gate.\n\nQuestion: According to the notes, how should evidence coverage be treated relative to answer fluency in research synthesis evaluation?\n\nAnswer:",
+  "response": "Evidence coverage must be evaluated as a separate metric from fluency.  The notes state that a synthesis can read fluently yet still omit required findings, so fluency alone is an incomplete measure of quality, and that evidence coverage should be measured as the fraction of gold evidence items actually used or correctly cited, independently of fluency.  [P3][P5]",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P3",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

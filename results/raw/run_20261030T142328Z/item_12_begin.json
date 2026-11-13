@@ -1,0 +1,20 @@
+{
+  "item_id": "item_12",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P3] Study WE-1 found that novices learning multi-step procedures scored higher after studying worked examples than after unaided problem solving of equal time.\n\n[P6] Study WE-2 reported that gradually fading worked-example guidance toward independent practice improved later transfer relative to keeping full examples throughout.\n\n[P1] The copy center offered double-sided printing discounts on Fridays.\n\n[P2] A stray cat was reported near the engineering courtyard.\n\n[P4] The radio station playlist featured student submissions this week.\n\n[P5] A fire drill emptied Building A in under four minutes.\n\n[P7] The campus app pushed a notification about a water-main repair.\n\nQuestion: What do the sources report about worked examples versus problem-solving practice for novices learning procedures?\n\nAnswer:",
+  "response": "The studies report that worked\u2011example instruction is more effective than unaided problem\u2011solving for novices learning multi\u2011step procedures.  In one experiment (WE\u20111) novices scored higher after studying worked examples than after an equal\u2011time period of independent problem solving\u3010P3\u3011.  A second study (WE\u20112) found that gradually fading the worked\u2011example guidance\u2014moving students toward independent practice\u2014led to better later transfer than keeping full examples available throughout the learning process\u3010P6\u3011.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P3",
+      "P6"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

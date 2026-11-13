@@ -1,0 +1,20 @@
+{
+  "item_id": "item_11",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P2] Distractor note R: In controlled prompts, increasing irrelevant but plausible text often reduced how many gold evidence items were cited, even when the final sentence still matched a simple answer key.\n\n[P5] Distractor note S: In some items, heavy distractors also flipped the answer itself, so correctness was not always stable when coverage fell.\n\n[P1] A mural was painted on the east wall of the student union.\n\n[P3] The bike share station reported three docks offline.\n\n[P4] A nutrition flyer listed campus vegan meal options.\n\n[P6] The astronomy club announced a cloudy-night cancellation.\n\n[P7] A maintenance request closed the south stairwell overnight.\n\nQuestion: According to the passages, does adding more distractor text always leave answer correctness unchanged while harming evidence coverage?\n\nAnswer:",
+  "response": "No.  \nWhile P2 shows that adding distractor text can reduce evidence coverage without changing the answer (\u201ceven when the final sentence still matched a simple answer key\u201d) [P2], P5 indicates that this is not always the case \u2013 heavy distractors sometimes flip the answer itself, so correctness is not always stable when coverage falls [P5].",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

@@ -1,0 +1,328 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage[authoryear,round,sort]{natbib}
+
+\title{Does Evidence Position Affect Citation Support and Evidence Coverage\\
+in Short Multi-Passage Synthesis? A Controlled Study with a Null Result}
+\author{
+  Madhukar Kumar\\
+  Department of Human Machine Interaction and Immersive Technologies\\
+  IIIT Allahabad\\
+  \texttt{MHM2026001}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A language model that accepts a long input does not necessarily use every part of that input equally well.
+Earlier work found that accuracy drops when the relevant text sits in the middle of the context,
+and the literature review that preceded this study argued that this matters for research synthesis, where a missed passage means a missed citation.
+This paper tests one small piece of that argument.
+We moved the two gold passages of a seven-passage packet to the beginning, the middle, or the end of the prompt
+and measured whether the model still cited them.
+The experiment used twelve synthetic packets, one model (\texttt{openai/gpt-oss-20b} through the Groq free tier),
+and one fixed prompt, giving 36 responses.
+Evidence coverage and citation support were 1.00 in all three positions, so the expected middle-position drop did not appear.
+A keyword-based correctness score did fall from 0.58 to 0.50 to 0.42 across begin, middle and end,
+but the 18 responses it marked wrong all cited both gold passages,
+and on reading them each gave the expected answer in words that differed from the answer key.
+We report this as a null result for short, easy contexts.
+It says nothing about long documents, and the prompts here were only about 170 words long.
+\end{abstract}
+
+\noindent\textbf{Keywords:} long-context language models, lost in the middle, citation support, evidence coverage, null result
+
+\section{Introduction}
+\label{sec:intro}
+
+Students and researchers now routinely paste several papers or excerpts into a language model and ask for a synthesis.
+The working assumption is that anything that fits in the context window will be read.
+\citet{liu2024lost} showed that this assumption is unsafe: in multi-document question answering and in key-value retrieval,
+models did best when the relevant information was at the start or the end of the input and noticeably worse when it was in the middle.
+Benchmarks built since then point the same way.
+Models still struggle as inputs get longer \citep{bai2024longbench},
+including models that pass simple retrieval tests \citep{hsieh2024ruler}.
+
+For research synthesis the concern is slightly different from plain question answering.
+A synthesis can read well and still leave out a source, or attach a citation to a passage that does not support the claim.
+\citet{zhang2025longcite} treat citation quality in long-context question answering as a problem of its own for this reason.
+The literature review that preceded this paper identified one gap in particular.
+The position studies we read measure answer accuracy.
+We did not come across one that varied evidence position and scored which passages were cited,
+although our search was limited and such work may exist.
+
+That gap is what we test here, at a scale that one student with a laptop and a free API can manage.
+The question is:
+with the passages and the prompt held fixed, does placing the gold evidence in the middle of a short multi-passage context
+lower citation support or evidence coverage compared with placing it at the beginning or the end?
+We expected a drop in the middle for both measures and call these expectations RQ1 (citation support) and RQ2 (evidence coverage).
+
+The answer on our data is no.
+Both measures were at their maximum in every condition.
+The paper therefore makes a modest contribution.
+It describes a controlled comparison that can be rerun from the saved configuration,
+reports a null result on the two primary measures,
+and shows through a reading of the raw responses that the one measure which did vary was mostly picking up differences in wording.
+In the terms of the course assignment this is a controlled comparative study (Pathway~B).
+We propose no new method or benchmark.
+
+\section{Related Work}
+\label{sec:related}
+
+The study by \citet{liu2024lost} is the direct starting point.
+They changed where the relevant document or key-value pair appeared in the input and found the pattern now known as ``lost in the middle'':
+highest performance at the beginning or end, and a significant drop in the middle, including for models built for long contexts.
+Our design borrows their manipulation and applies it to a different outcome.
+
+Two benchmarks shaped our expectations about difficulty.
+LongBench \citep{bai2024longbench} collects 21 datasets in six task categories, with English inputs averaging 6,711 words,
+and reports that even the strongest model it tested struggled as contexts grew.
+RULER \citep{hsieh2024ruler} starts from the needle-in-a-haystack test and adds multi-hop tracing and aggregation tasks.
+Almost all of the 17 models it evaluated were near perfect on the plain needle test and then dropped sharply as input length increased.
+Both results suggest that degradation depends on length and task difficulty together,
+which matters for reading our own result because our inputs are far shorter than anything in these benchmarks.
+
+On citations, LongCite \citep{zhang2025longcite} introduces a benchmark for long-context question answering with citations
+and fine-tunes models to produce sentence-level citations in a single pass.
+We do not use their models or data.
+What we take from that work is the idea that citation quality should be scored separately from answer correctness.
+Our two primary measures are much cruder than theirs, since they operate on passage ids and not on sentences.
+
+\section{Method}
+\label{sec:method}
+
+\subsection{Task and data}
+
+Each item, which we call a packet, has a question, seven short passages with ids \texttt{P1} to \texttt{P7}, and a short answer key.
+Two passages are gold, meaning they are needed to answer the question.
+The other five are distractors written as unrelated campus notices, such as a bike rack extension or a jammed label printer.
+In seven of the twelve packets both gold passages support the same answer.
+In the other five the second gold passage qualifies or contradicts the first,
+so a complete answer has to report the disagreement and cite both.
+The packets were written for this study and are not excerpts from real papers.
+Six are about learning and study habits, for example spaced practice and sleep and attention.
+The other six are short statements about long-context evaluation itself.
+
+\subsection{Position manipulation}
+
+The two gold passages are kept next to each other and moved as a block.
+In the \emph{begin} condition the block comes first and the five distractors follow.
+In the \emph{end} condition the distractors come first.
+In the \emph{middle} condition two distractors precede the block and three follow it.
+The passage text and ids are identical in all three conditions, so a passage labelled \texttt{P2} keeps that label wherever it appears.
+Only the order changes.
+
+\subsection{Prompt and model}
+
+Every prompt uses the same template.
+It tells the model to use only the passages given, to cite passage ids in square brackets after each factual claim,
+to say so when sources disagree, and to say so when the evidence is insufficient.
+The passages follow, then the question.
+The model is called once per prompt, with no retrieval step, no few-shot examples, and no fine-tuning.
+
+\subsection{Measures}
+
+\emph{Evidence coverage} is the fraction of gold passage ids that appear as citations in the response.
+\emph{Citation support} is the fraction of cited ids that are gold.
+A response that cites both gold passages and nothing else scores 1.00 on both.
+These are the primary measures.
+The secondary measure, \emph{keyword correctness}, is 1 if the answer key appears as a substring of the response
+after lowercasing and removing markdown and hyphen differences, and 0 otherwise.
+The keys are two or three words long, for example ``does not guarantee''.
+
+Extracting citations took more care than expected.
+The model did not always write \texttt{[P2]} as instructed.
+It also produced full-width brackets, parentheses, bold ids such as \texttt{**P2**}, and bare ids at the start of bullet points.
+The final extractor accepts all of these forms.
+Section~\ref{sec:deep} describes one error that the earlier, stricter version caused.
+
+\section{Experimental Setup}
+\label{sec:setup}
+
+All responses came from \texttt{openai/gpt-oss-20b}, served through Groq's OpenAI-compatible endpoint on the free tier.
+Temperature was 0 and the output limit was 768 tokens.
+The limit had to be that high because the model spends part of its budget on reasoning before it writes the answer,
+and smaller limits returned empty answers during pilot calls.
+The settings were fixed in a configuration file before the main run.
+
+Twelve packets in three positions give 36 prompts.
+The prompts are between 153 and 189 words long (170 on average), and the responses between 46 and 131 words.
+The free tier returned rate-limit errors partway through,
+so the run script waits and retries, and it can resume without repeating finished calls.
+All 36 responses reported here are stored in one run directory, each with its full prompt.
+Scoring happens offline on those saved files, which meant the scorer could be corrected and rerun without calling the model again.
+The pipeline is written in Python and ran on a MacBook Air with 8\,GB of memory.
+Nothing was trained, so there is no train/test split to leak across.
+
+\section{Results}
+\label{sec:results}
+
+Table~\ref{tab:means} and Figure~\ref{fig:means} give the means by position.
+
+\begin{table}[t]
+\centering
+\caption{Mean scores by position of the gold passages (12 packets per position).}
+\label{tab:means}
+\begin{tabular}{lccc}
+\toprule
+Position & Coverage & Citation support & Keyword correctness \\
+\midrule
+begin  & 1.00 & 1.00 & 0.58 \\
+middle & 1.00 & 1.00 & 0.50 \\
+end    & 1.00 & 1.00 & 0.42 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig_position_means.pdf}
+\caption{Mean coverage, citation support and keyword correctness for each position.}
+\label{fig:means}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\linewidth]{figures/fig_per_item_correctness.pdf}
+\caption{Keyword correctness for each packet and position. Coverage and citation support are not shown because they are 1.00 everywhere.}
+\label{fig:peritem}
+\end{figure}
+
+For RQ1, citation support was 1.00 at the beginning, in the middle and at the end.
+In all 36 responses the model cited the two gold passages and never cited a distractor.
+The drop we expected in the middle condition did not occur.
+
+For RQ2, evidence coverage was also 1.00 in every condition.
+No gold passage was left uncited in any response, so this expectation was not met either.
+
+Keyword correctness is the only measure that moved.
+It was 0.58 at the beginning, 0.50 in the middle and 0.42 at the end,
+which corresponds to 7, 6 and 5 packets out of 12 (Figure~\ref{fig:peritem}).
+Lowest performance at the end is not the lost-in-the-middle pattern,
+and the next section shows that the difference rests on very few responses.
+
+\section{Analysis of the Keyword Misses}
+\label{sec:deep}
+
+Half of the responses, 18 of 36, scored 0 on keyword correctness.
+All 18 scored 1.00 on both coverage and citation support (Figure~\ref{fig:fail}),
+so the model had found and cited the right passages in each of them.
+The 18 are spread over the positions as 5 at the beginning, 6 in the middle and 7 at the end.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/fig_failure_tags.pdf}
+\caption{Responses flagged by the evaluation script. The flagged cases are responses with full coverage and citation support that did not contain the answer key.}
+\label{fig:fail}
+\end{figure}
+
+Fifteen of the 18 come from five packets that missed the key in all three positions.
+For these packets position made no difference, and the responses point to the answer key as the cause.
+One packet asks how evidence coverage should be treated relative to fluency, and its key is ``scored separately''.
+The model answered that coverage ``must be evaluated as a separate metric from fluency'' and cited both gold passages.
+Another has the key ``shorter sleep''.
+The response reported that students sleeping ``under six hours'' had lower attention scores,
+which is the wording of the passage itself.
+The other three packets in this group follow the same pattern.
+These answers are correct by any reasonable reading, and the substring match cannot see that.
+
+The remaining three misses come from two packets, and they account for the whole difference between positions.
+The first has the key ``does not guarantee''.
+At the beginning and in the middle the model wrote that a longer window ``does not guarantee'' a more complete answer.
+At the end it wrote ``does not automatically lead to'', which carries the same meaning and scores 0.
+The second has the key ``not a complete substitute''.
+In the middle and at the end the model said plainly that the passages do not support the idea, with both passages cited,
+but only at the beginning did it happen to use the key phrase.
+The downward trend in the last column of Table~\ref{tab:means} is therefore three rephrased answers out of 36.
+With one response per cell we cannot tell whether position influenced the wording or whether this is ordinary variation,
+and we do not treat it as evidence of positional degradation.
+
+One scoring error is worth recording because it briefly produced the result we had been expecting.
+In an earlier version of the score table the middle condition had a coverage of 0.92.
+A single middle-position response had been scored as citing nothing.
+When that response was read against its score, it turned out to cite both gold passages in bold,
+as \texttt{**P2**} and \texttt{**P7**}, a form the extractor did not yet accept.
+After the extractor was fixed and all saved responses were rescored, the middle mean returned to 1.00.
+No new model calls were made.
+An extraction error of this size would have been enough to look like a lost-in-the-middle effect with twelve packets.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The most likely explanation for the null result is that the task was too easy.
+A prompt of about 170 words with seven passages is tiny next to the inputs for which position effects have been reported.
+The average English input in LongBench is 6,711 words \citep{bai2024longbench},
+and RULER reports its drops as inputs lengthen \citep{hsieh2024ruler}.
+Our distractors also made the gold passages easy to spot.
+A sentence about a recycling drive does not compete with a sentence about sleep and attention when the question is about sleep.
+Under those conditions both primary measures sat at their ceiling, and a measure at its ceiling cannot show a difference between conditions.
+
+The result should be read with that in mind.
+It shows that this model, with this prompt, cites two clearly relevant passages among five irrelevant ones wherever they are placed.
+It does not show that position is irrelevant to citation behaviour in general,
+and it is consistent with the earlier findings if position effects only appear once the context is long or the distractors are plausible.
+Our data cannot distinguish between those possibilities because we varied neither length nor distractor difficulty.
+
+There is also a lesson here about measurement.
+Two scoring artefacts in this small study could have been mistaken for a position effect.
+One was the bold-citation error, and the other was the keyword score falling across positions.
+Both went away or lost their meaning once the raw responses were read.
+For a small evaluation like this one, reading every response was feasible, and it changed the conclusion.
+
+\section{Limitations}
+\label{sec:limits}
+
+The study is small.
+There are twelve packets, one model, one prompt template and one response per condition,
+so there are no confidence intervals and no significance tests, and none would be meaningful at this size.
+The packets are synthetic and short, so the findings do not transfer to real papers or to long inputs.
+
+The two primary measures check which passage ids were cited.
+They do not check whether the sentence carrying the citation is actually supported by the passage.
+A response could cite the right passages and still misstate them, and our scores would not detect it.
+Keyword correctness is weaker still, as Section~\ref{sec:deep} shows.
+In hindsight a short human rubric would have been a better secondary measure.
+
+Finally, the model is hosted by a third party.
+Temperature 0 reduces variation but does not guarantee identical outputs on a rerun,
+and the provider can change or withdraw the model.
+The saved responses are the record of what was observed.
+
+\section{Conclusion}
+\label{sec:concl}
+
+We tested whether moving gold passages to the middle of a short multi-passage prompt lowers citation support or evidence coverage.
+It did not.
+Both were 1.00 at the beginning, in the middle and at the end for all twelve packets.
+The keyword correctness score varied, but the variation came from answers that were phrased differently from the key while citing the right passages.
+We conclude that this setup was too easy to reveal a position effect if one exists.
+The next step is to make it harder by using longer contexts, more distractors, and distractors on the same topic as the gold passages,
+and to replace keyword matching with human judgement of answer and citation quality.
+
+\section*{Reproducibility and use of AI tools}
+
+{\sloppy
+The code, configuration, packets, saved model responses, score tables and figure scripts are in the project folder
+\texttt{AITR\_Lab02\_MHM2026001\_ContextWindowDegradation}.
+The results in this paper come from the run directory \texttt{run\_20261030T142328Z}.
+The API key is read from a local \texttt{.env} file that is not part of the repository.
+\par}
+
+An AI coding assistant was used during this project for scaffolding the code, drafting the synthetic packets,
+writing the analysis scripts, and drafting and editing this manuscript.
+The numbers reported here are computed from the saved model responses.
+Which tasks were AI-assisted, and how each was checked, is recorded in \texttt{ai\_assistance\_log.md} in the project folder.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

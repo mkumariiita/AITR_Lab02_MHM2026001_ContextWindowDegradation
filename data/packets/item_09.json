@@ -1,0 +1,17 @@
+{
+  "item_id": "item_09",
+  "question": "Do hierarchical summarize-then-synthesize pipelines risk dropping methodological limitations early, according to the notes?",
+  "required_claim": "Yes: early summaries can omit limitations, which then never reach the final synthesis.",
+  "gold_answer_key": "omit limitations",
+  "gold_evidence_ids": ["P4", "P6"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A vending machine on Floor 2 was restocked with water bottles."},
+    {"id": "P2", "role": "distractor", "text": "The language lab headphones were sanitized between classes."},
+    {"id": "P3", "role": "distractor", "text": "An intramural soccer match was rescheduled after rain."},
+    {"id": "P4", "role": "gold_support", "text": "Pipeline note N: When each paper is compressed into a short summary first, methodological limitations are frequently dropped because they are not treated as central claims."},
+    {"id": "P5", "role": "distractor", "text": "The post office window shortened lunch-hour service."},
+    {"id": "P6", "role": "gold_support", "text": "Pipeline note O: If a limitation is missing from stage-1 summaries, later synthesis stages cannot recover it unless the system re-reads the source or keeps an explicit evidence table."},
+    {"id": "P7", "role": "distractor", "text": "A visitor parking voucher printer was installed at Gate B."}
+  ]
+}

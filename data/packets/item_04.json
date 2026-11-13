@@ -1,0 +1,17 @@
+{
+  "item_id": "item_04",
+  "question": "What do the sources say about whether highlighting text while reading reliably improves comprehension?",
+  "required_claim": "Highlighting alone shows weak or mixed effects; active retrieval is reported as stronger.",
+  "gold_answer_key": "highlighting alone",
+  "gold_evidence_ids": ["P3", "P5"],
+  "contradict_ids": [],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "Library opening hours were extended during finals week."},
+    {"id": "P2", "role": "distractor", "text": "A weather station near campus recorded unusually humid exam mornings."},
+    {"id": "P3", "role": "gold_support", "text": "Review note H: Across several classroom studies, highlighting alone produced small or inconsistent comprehension gains compared with re-reading."},
+    {"id": "P4", "role": "distractor", "text": "The registrar published a new course-add deadline calendar."},
+    {"id": "P5", "role": "gold_support", "text": "Review note I: Practice tests and free recall (retrieval practice) were associated with larger comprehension and retention gains than highlighting."},
+    {"id": "P6", "role": "distractor", "text": "A dormitory energy audit found higher electricity use in winter."},
+    {"id": "P7", "role": "distractor", "text": "Parking permit prices increased by a small fixed amount."}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "item_id": "item_06",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] The swimming pool closed for tile repairs over the long weekend.\n\n[P2] A lost-and-found notice listed three umbrellas and a calculator.\n\n[P4] Study PI-1 found that classes using peer discussion after clicker questions showed higher conceptual exam scores than lecture-only controls.\n\n[P6] Study PI-2 reported weaker or null conceptual gains when peer instruction was used without facilitator training and with poorly designed questions.\n\n[P3] Bus route 12 added an evening stop near the graduate housing block.\n\n[P5] A cafeteria recipe change reduced sodium in the soup of the day.\n\n[P7] The alumni office mailed reunion invitations to the class of 2014.\n\nQuestion: What is reported about peer instruction clicker questions and conceptual exam performance?\n\nAnswer:",
+  "response": "Peer\u2011instruction clicker questions are reported to influence conceptual exam performance in two complementary ways:\n\n* In Study\u202fPI\u20111, classes that used peer discussion after clicker questions achieved **higher conceptual exam scores** than lecture\u2011only control groups. [P4]  \n* In Study\u202fPI\u20112, the same instructional strategy produced **weaker or null conceptual gains** when it was implemented without facilitator training and with poorly designed questions. [P6]",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P4",
+      "P6"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

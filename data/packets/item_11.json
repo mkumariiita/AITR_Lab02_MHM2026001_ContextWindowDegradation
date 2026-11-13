@@ -1,0 +1,17 @@
+{
+  "item_id": "item_11",
+  "question": "According to the passages, does adding more distractor text always leave answer correctness unchanged while harming evidence coverage?",
+  "required_claim": "Not always; sometimes correctness also drops, but coverage can fall even when the answer still looks correct.",
+  "gold_answer_key": "coverage can fall",
+  "gold_evidence_ids": ["P2", "P5"],
+  "contradict_ids": ["P5"],
+  "passages": [
+    {"id": "P1", "role": "distractor", "text": "A mural was painted on the east wall of the student union."},
+    {"id": "P2", "role": "gold_support", "text": "Distractor note R: In controlled prompts, increasing irrelevant but plausible text often reduced how many gold evidence items were cited, even when the final sentence still matched a simple answer key."},
+    {"id": "P3", "role": "distractor", "text": "The bike share station reported three docks offline."},
+    {"id": "P4", "role": "distractor", "text": "A nutrition flyer listed campus vegan meal options."},
+    {"id": "P5", "role": "gold_contradict", "text": "Distractor note S: In some items, heavy distractors also flipped the answer itself, so correctness was not always stable when coverage fell."},
+    {"id": "P6", "role": "distractor", "text": "The astronomy club announced a cloudy-night cancellation."},
+    {"id": "P7", "role": "distractor", "text": "A maintenance request closed the south stairwell overnight."}
+  ]
+}

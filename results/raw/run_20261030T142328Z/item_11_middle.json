@@ -1,0 +1,20 @@
+{
+  "item_id": "item_11",
+  "position": "middle",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] A mural was painted on the east wall of the student union.\n\n[P3] The bike share station reported three docks offline.\n\n[P2] Distractor note R: In controlled prompts, increasing irrelevant but plausible text often reduced how many gold evidence items were cited, even when the final sentence still matched a simple answer key.\n\n[P5] Distractor note S: In some items, heavy distractors also flipped the answer itself, so correctness was not always stable when coverage fell.\n\n[P4] A nutrition flyer listed campus vegan meal options.\n\n[P6] The astronomy club announced a cloudy-night cancellation.\n\n[P7] A maintenance request closed the south stairwell overnight.\n\nQuestion: According to the passages, does adding more distractor text always leave answer correctness unchanged while harming evidence coverage?\n\nAnswer:",
+  "response": "No.  \n- P2 reports that adding irrelevant but plausible text usually **reduces the number of gold evidence items cited** while the final answer still matches the simple key, implying that correctness can stay the same even when coverage drops.  \n- P5, however, notes that in some cases **heavy distractors actually flipped the answer itself**, meaning correctness was not always preserved when coverage fell.  \n\nThus, adding more distractor text does not always leave answer correctness unchanged; it can sometimes change the answer while still harming evidence coverage. [P2][P5]",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 0,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

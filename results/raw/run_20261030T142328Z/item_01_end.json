@@ -1,0 +1,20 @@
+{
+  "item_id": "item_01",
+  "position": "end",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P1] Campus Wi-Fi latency was measured across three dormitories during exam week. Median latency remained under 40 ms.\n\n[P3] Library seating capacity increased by 15% after renovation. Student satisfaction with noise levels was unchanged.\n\n[P4] A survey of teaching assistants reported higher workload when courses adopted weekly online quizzes.\n\n[P6] The registrar noted that course withdrawal rates fell slightly after mid-semester advising emails.\n\n[P7] An HCI pilot study redesigned the bot interface icons; usability scores improved, but learning outcomes were not measured.\n\n[P2] Study A (RCT, n=120) found that immediate tutoring-bot feedback raised short-term quiz scores for students with low prior knowledge (standardized effect \u2248 0.35).\n\n[P5] Study B (survey, n=80) reported no significant average difference in quiz scores between tutoring-bot and static-answer conditions.\n\nQuestion: Does tutoring-bot feedback improve short-term quiz scores in the summarized studies, and for whom?\n\nAnswer:",
+  "response": "The two studies give conflicting evidence:\n\n* **Study\u202fA (P2)** \u2013 In a randomized controlled trial (n\u202f=\u202f120), students who received immediate tutoring\u2011bot feedback scored higher on short\u2011term quizzes than those who did not, but only for students with **low prior knowledge** (standardized effect \u2248\u202f0.35)\u3010P2\u3011.\n\n* **Study\u202fB (P5)** \u2013 In a survey of 80 students, there was **no significant average difference** in quiz scores between the tutoring\u2011bot and static\u2011answer conditions, suggesting no overall benefit\u3010P5\u3011.\n\nThus, the summarized evidence indicates that tutoring\u2011bot feedback can improve short\u2011term quiz scores **for students with low prior knowledge** (per Study\u202fA), but the effect was not observed on average across all participants in Study\u202fB. Further research would be needed to confirm the benefit for other subgroups.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P2",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}

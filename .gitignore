@@ -1,0 +1,19 @@
+# Secrets — never commit
+.env
+
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+
+# Run logs (raw model responses ARE committed; they are the evidence)
+*.log

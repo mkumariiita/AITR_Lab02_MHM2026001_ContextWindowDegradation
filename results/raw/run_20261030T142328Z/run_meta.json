@@ -1,0 +1,14 @@
+{
+  "stamp": "20261030T142445Z",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "n_items": 12,
+  "positions": [
+    "begin",
+    "middle",
+    "end"
+  ],
+  "table": "results/tables/results_run_20261030T142328Z.csv",
+  "out_dir": "results/raw/run_20261030T142328Z",
+  "note": "dummy backend outputs are NOT scientific results"
+}

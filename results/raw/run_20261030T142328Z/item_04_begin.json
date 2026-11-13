@@ -1,0 +1,20 @@
+{
+  "item_id": "item_04",
+  "position": "begin",
+  "prompt": "You are helping with research synthesis.\nUse ONLY the passages below. For every factual claim, cite passage ids in square brackets using the id shown before each passage (for example [P1]). If sources disagree, say so and cite both.\nIf evidence is insufficient, say so explicitly.\n\nPassages:\n[P3] Review note H: Across several classroom studies, highlighting alone produced small or inconsistent comprehension gains compared with re-reading.\n\n[P5] Review note I: Practice tests and free recall (retrieval practice) were associated with larger comprehension and retention gains than highlighting.\n\n[P1] Library opening hours were extended during finals week.\n\n[P2] A weather station near campus recorded unusually humid exam mornings.\n\n[P4] The registrar published a new course-add deadline calendar.\n\n[P6] A dormitory energy audit found higher electricity use in winter.\n\n[P7] Parking permit prices increased by a small fixed amount.\n\nQuestion: What do the sources say about whether highlighting text while reading reliably improves comprehension?\n\nAnswer:",
+  "response": "The evidence indicates that highlighting alone does **not** reliably improve comprehension.  \n- Review note\u202fH reports that highlighting produced only small or inconsistent comprehension gains compared with re\u2011reading [P3].  \n- Review note\u202fI finds that practice tests and free recall (retrieval practice) yielded larger comprehension and retention gains than highlighting [P5].  \n\nThus, the sources agree that highlighting is not an effective strategy for reliably enhancing comprehension.",
+  "backend": "openai_compat",
+  "model": "openai/gpt-oss-20b",
+  "scores": {
+    "answer_correctness": 1,
+    "evidence_coverage": 1.0,
+    "citation_support": 1.0,
+    "citations": [
+      "P3",
+      "P5"
+    ],
+    "missed_gold": [],
+    "distractor_cites": []
+  },
+  "scorer_version": "cite_brackets_v2"
+}
