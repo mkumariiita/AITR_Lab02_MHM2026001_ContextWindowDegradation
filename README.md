@@ -92,8 +92,8 @@ Confirm with the course instructor before making the repository public. **[TO VE
 ## Citation
 
 ```
-Madhukar Kumar. Position Effects on Citation Support and Evidence Coverage
-in Short-Context Research-Style Synthesis: A Controlled Negative Result.
+Madhukar Kumar. Context-Window Degradation in Research Synthesis:
+Does Evidence Position Affect Citation Support? A Controlled Null Result.
 AI Tools for Research coursework, IIIT Allahabad, 2026.
 ```
 

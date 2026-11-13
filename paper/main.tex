@@ -9,8 +9,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[authoryear,round,sort]{natbib}
 
-\title{Does Evidence Position Affect Citation Support and Evidence Coverage\\
-in Short Multi-Passage Synthesis? A Controlled Study with a Null Result}
+\title{Context-Window Degradation in Research Synthesis:\\
+Does Evidence Position Affect Citation Support?\\
+A Controlled Null Result}
 \author{
   Madhukar Kumar\\
   Department of Human Machine Interaction and Immersive Technologies\\
@@ -55,12 +56,15 @@ including models that pass simple retrieval tests \citep{hsieh2024ruler}.
 For research synthesis the concern is slightly different from plain question answering.
 A synthesis can read well and still leave out a source, or attach a citation to a passage that does not support the claim.
 \citet{zhang2025longcite} treat citation quality in long-context question answering as a problem of its own for this reason.
-The literature review that preceded this paper identified one gap in particular.
+Our earlier literature review, on context-window degradation and its impact on long-document research synthesis,
+surveyed this work and left one question open.
 The position studies we read measure answer accuracy.
 We did not come across one that varied evidence position and scored which passages were cited,
 although our search was limited and such work may exist.
 
-That gap is what we test here, at a scale that one student with a laptop and a free API can manage.
+That gap is what this paper tests, at a scale that one student with a laptop and a free API can manage.
+The review covered degradation as the context grows long; the experiment below holds the context short on purpose,
+so that we start from the easiest case and can see whether a position effect appears even there.
 The question is:
 with the passages and the prompt held fixed, does placing the gold evidence in the middle of a short multi-passage context
 lower citation support or evidence coverage compared with placing it at the beginning or the end?
