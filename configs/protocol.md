@@ -47,7 +47,7 @@ Error cases: correct-looking answer with missing middle evidence; citation to di
 - [x] Model name/version frozen in `configs/experiment.yaml`  
 - [x] Packet set frozen for the primary reported run (`item_01`–`item_12`)  
 - [x] Primary metrics: **citation_support**, then coverage; correctness secondary/heuristic  
-- [x] Human spot-check of scorer / raw outputs (see `baseline_audit_report.md`)  
+- [x] Raw outputs compared with scores (see `baseline_audit_report.md`; the bold-citation miss was found by the assistant)  
 - [x] G3 eval regenerated only from real CSV (`scripts/evaluate_results.py`)  
 
 ## Threats to validity

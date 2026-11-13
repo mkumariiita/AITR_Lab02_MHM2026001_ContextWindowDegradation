@@ -29,7 +29,7 @@ Tag used: `coverage_ok_corr_fail` / `citation_ok_corr_fail`.
 End has slightly more keyword misses, but coverage/citation remain perfect everywhere.  
 **Do not interpret this as classic lost-in-the-middle on evidence access.**
 
-## 3. Qualitative taxonomy (human-readable review of samples)
+## 3. Qualitative taxonomy (reading of saved responses)
 
 | Type | Description | Example |
 |---|---|---|
@@ -37,7 +37,7 @@ End has slightly more keyword misses, but coverage/citation remain perfect every
 | **T2 Lexical variant** | Same meaning, different words | `item_08_*`: “under six hours” / lower attention vs key `shorter sleep` |
 | **T3 Near-synonym of metric phrase** | Conceptual match to required claim | `item_07_*`: “separate metric from fluency” vs key `scored separately` |
 
-**Reviewer judgment:** For T1–T3, treating `corr=0` as scientific model failure would be misleading. Primary RQs should rely on coverage/citation support.
+**Reading of those examples:** For T1–T3, treating `corr=0` as a failure to use the gold passages would be misleading. The primary questions should rely on coverage and citation support. The researcher has not yet logged a separate reading of all 18 cases.
 
 ## 4. What this deep analysis contributes
 

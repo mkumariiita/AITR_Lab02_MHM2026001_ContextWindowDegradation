@@ -52,7 +52,7 @@ Legend: **DONE** · **PARTIAL** · **MISSING**
 |---:|---|---|---|---|
 | 08 | Env verification + repo structure | `environment_verification_log.md`, `requirements.txt`, README/src/scripts/configs/results/… | **DONE** | `env_test.py` PASS logged |
 | 09 | Working baseline + understanding log | `src/position_citation/*`, `scripts/run_baseline.py`, `ai_assistance_log.md` | **DONE** | Modules: packets, assemble, llm, score; deviations logged (custom corpus, not full LongCite reproduce) |
-| 10 | Baseline validation report | `baseline_validation.md`, `baseline_audit_report.md` | **DONE** | Human spot-check; Bug B documented as reviewer-found |
+| 10 | Baseline validation report | `baseline_validation.md`, `baseline_audit_report.md` | **DONE** | Bug B found by the assistant; attribution corrected 2026-11-13 |
 | 11 | Debug from actual evidence | Cases in `ai_assistance_log.md` + audit report | **DONE** | 429 rate limit retries; empty-content max_tokens; citation format bugs fixed with re-score |
 
 **Phase III overall:** **DONE for Gate G2**.

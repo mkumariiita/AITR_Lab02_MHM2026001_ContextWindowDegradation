@@ -1,7 +1,7 @@
 # Baseline validation report (Prompt 10)
 
-**Status:** Gate G2 ready after human spot-check (2026-10-30) + automated audit + scorer fix for bold/bare passage ids.  
-**Full correct/incorrect write-up:** `baseline_audit_report.md` (reviewer-found Bug B on `item_05_middle`).
+**Status:** Gate G2 ready after the researcher’s chat confirmation (2026-10-30), an assistant audit, and a scorer fix for bold/bare passage ids.  
+**Full correct/incorrect write-up:** `baseline_audit_report.md` (Bug B on `item_05_middle` was found by the assistant, not by a logged human file review).
 
 ## Intended baseline
 
@@ -27,7 +27,7 @@ Direct long-context prompting with mandatory passage citations; compare begin/mi
 - [x] Prompt version frozen (`cite_v1`)
 - [x] Model name/version recorded
 - [x] Temperature/max_tokens match config
-- [x] Scorer spot-checked by human on ≥3 items
+- [ ] Scorer spot-checked by the researcher on named files (chat confirmation only; files not logged)
 - [x] Automated audit: 36/36 openai_compat + gpt-oss-20b; no dummy leftovers
 - [x] Discrepancies vs published numbers: N/A (custom micro-corpus)
 
@@ -43,11 +43,9 @@ Direct long-context prompting with mandatory passage citations; compare begin/mi
 | Answer-key heuristic | UNCERTAIN | Some `corr=0` may be phrasing mismatch; human judgment preferred for paper claims |
 | Strong lost-in-the-middle claim | NOT SUPPORTED yet | After rescore, position gaps are tiny / unstable on this short synthetic set |
 
-## Human spot-check
+## Human check
 
-1. Opened sample raw JSON under `run_20261030T142328Z`  
-2. Confirmed answers/citations look reasonable  
-3. Done: [x] (researcher confirmed in chat 2026-10-30)
+On 2026-10-30 the researcher said in chat that the run had been verified, and separately noticed that some saved outputs were from the dummy backend. Which raw files were opened was not written down. The bold-citation miss was found later by the assistant. A file-by-file human re-read is still open.
 
 ## Gate G2 decision
 

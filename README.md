@@ -80,7 +80,7 @@ Short synthetic contexts; one model; heuristic metrics; null primary effect may 
 
 ## Credits / AI use
 
-AI-assisted coding and drafting with human verification (see `ai_assistance_log.md`, `baseline_audit_report.md`).  
+AI-assisted coding and drafting. Who checked what is in `ai_assistance_log.md`, `ai_provenance_report.md`, and `baseline_audit_report.md`.  
 Do not treat AI text as authority for citations without opening primary sources.
 
 ## License
@@ -103,5 +103,5 @@ AI Tools for Research coursework, IIIT Allahabad, 2026.
 - [x] Phase V draft paper (`paper/main.pdf`)  
 - [x] Local git repository + LICENSE  
 - [ ] GitHub remote + public release  
-- [ ] Prompt 18 full AI audit polish  
+- [x] Prompt 18 report (`ai_provenance_report.md`; human read-through still open)  
 - [ ] 5-minute demo

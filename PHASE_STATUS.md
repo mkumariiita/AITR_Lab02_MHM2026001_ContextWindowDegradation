@@ -3,7 +3,7 @@
 **Project:** `AITR_Lab02_MHM2026001_ContextWindowDegradation`  
 **Topic:** Context-Window Degradation and Its Impact on Long-Document Research Synthesis  
 
-## Status: **Phase V draft complete → G4 still incomplete (GitHub/demo/AI audit)**
+## Status: **Prompt 18 report written → G4 still incomplete (GitHub remote / demo / human read-through)**
 
 | Phase | Prompts | Gate | Status |
 |---|---|---|---|
@@ -12,7 +12,7 @@
 | III | 08–11 | G2 | Done |
 | IV | 12–14 | G3 | Done |
 | **V** | **15–17** | **G4 partial** | **Draft paper + peer review + README done; GitHub remote / demo pending** |
-| VI | 18 | G4 | Partial (`ai_assistance_log.md` exists; full Prompt 18 report optional polish) |
+| VI | 18 | G4 | Report written (`ai_provenance_report.md`); human still to read and sign |
 
 ## Phase V artifacts
 
