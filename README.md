@@ -53,6 +53,21 @@ python scripts/evaluate_results.py
 # writes results/tables/g3_*.csv and results/figures/*
 ```
 
+### One-shot notebook (local or Google Colab)
+
+File: `notebooks/run_everything.ipynb`
+
+**Google Colab:** upload that notebook → **Runtime → Run all**.  
+It installs packages, clones this GitHub repo, then rebuilds tables/figures from the locked CSV (no API key).  
+If the repo is private, paste a read-only GitHub PAT into `GH_TOKEN`, or set `FORCE_ZIP_UPLOAD = True` and upload a project zip.
+
+**Local:**
+```bash
+jupyter notebook notebooks/run_everything.ipynb
+```
+
+`RUN_LIVE_API = False` by default. Set `True` only for a fresh Groq call.
+
 ## Paper
 
 ```bash
